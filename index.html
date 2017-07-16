@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="OwlCarousel2-2.2.1/dist/assets/owl.carousel.min.css"/>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Carousel</title>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script src="OwlCarousel2-2.2.1/dist/owl.carousel.min.js"></script>
+</head>
+<body>
+	<div class="content">
+		<div class="owl-carousel">
+		  <div class="carousel-element"> Your Content </div>
+		  <div class="carousel-element"> Your Content </div>
+		  <div class="carousel-element"> Your Content </div>
+		  <div class="carousel-element"> Your Content </div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.owl-carousel').owlCarousel();
+		
+		var x = document.getElementsByClassName("carousel-element");
+		switch (x.length) {
+			case 1:
+				document.getElementsByClassName("owl-stage")[0].classList.toggle("oneElement");
+				break;
+			case 2:
+				document.getElementsByClassName("owl-stage")[0].classList.toggle("twoElements");
+				break;
+			case 3:
+				document.getElementsByClassName("owl-stage")[0].classList.toggle("threeElements");
+				break;
+			default:
+				return;
+		}
+	});
+
+</script>
+</html>
