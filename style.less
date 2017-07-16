@@ -16,14 +16,15 @@
 	text-align: center;
 }
 
-.owl-stage.oneElement,
-.owl-stage.twoElements,
-.owl-stage.threeElements {
-	width: 100% !important;
-	background: red !important;
-	transform: none !important;
-	transition: none !important;
+.owl-stage .owl-item {
+	width: 100%;
+	min-width: 220px !important;
 }
-.owl-stage.oneElement .owl-item {width:  100% !important;}
-.owl-stage.twoElements .owl-item {width: 50% !important;}
-.owl-stage.threeElements .owl-item {width: 33.333333% !important;}
+
+.owl-prev, .owl-next {
+	position: relative;
+	background: red;
+	height: 20px;
+	width: 20px;
+}
+.owl-next {background: blue;}
