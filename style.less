@@ -28,3 +28,25 @@
 	width: 20px;
 }
 .owl-next {background: blue;}
+
+.owl-stage.oneItem {
+	width: 100% !important;
+	.owl-item {width: 100% !important;}
+}
+
+.owl-stage.twoItems {
+	width: 780px !important;
+//	width: 100% !important;
+	.owl-item {
+		width: 370px !important;
+		&:last-child {margin-right: 0 !important;}
+	}
+}
+
+.owl-stage.threeItems {
+	width: 780px !important;
+	.owl-item {
+		width: 240px !important;
+		&:last-child {margin-right: 0 !important;}
+	}
+}
