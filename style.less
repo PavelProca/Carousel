@@ -1,12 +1,15 @@
+@theme-color: #0D99B7;
+@theme-gray: #DADADA;
 * {
 	margin: 0;
 	padding: 0;
 }
 
-.content {
+.wrapper {
 	margin: 20px auto;
 	max-width: 760px;
 	background: lightgreen;
+	box-sizing: border-box;
 }
 
 .owl-carousel {
@@ -14,25 +17,10 @@
 }
 
 .owl-carousel .carousel-element {
-	height: 200px;
-	background: yellow;
-	outline: 1px solid black;
-	text-align: center;
 }
 
-.owl-stage .owl-item {
-	width: 100%;
-	min-width: 220px !important;
-}
 
-.owl-prev, .owl-next {
-	position: relative;
-	background: red;
-	height: 20px;
-	width: 20px;
-}
-.owl-next {background: blue;}
-
+// STYLES FOR 1, 2 & 3 ELEMENTS CAROUSEL
 .owl-stage.oneItem {
 	width: 100% !important;
 	.owl-item {width: 100% !important;}
@@ -40,7 +28,6 @@
 
 .owl-stage.twoItems {
 	width: 780px !important;
-//	width: 100% !important;
 	.owl-item {
 		width: 370px !important;
 		&:last-child {margin-right: 0 !important;}
@@ -52,5 +39,76 @@
 	.owl-item {
 		width: 240px !important;
 		&:last-child {margin-right: 0 !important;}
+	}
+}
+
+.owl-stage .owl-item {
+	width: 100%;
+	min-width: 220px !important;
+}
+
+// STYLES FOR NAVIGATION BUTTONS
+.owl-prev, .owl-next {
+	position: relative;
+	background: red;
+	height: 20px;
+	width: 20px;
+}
+
+.owl-next {background: blue;}
+
+.owl-prev.disabled, .owl-next.disabled {
+	display: none;
+}
+
+// STYLES FOR ELEMENTS
+.element-wrapper {
+	height: 200px;
+	text-align: center;
+	background: #fff;
+}
+
+input[name="package"] {
+	display: none;
+}
+
+label[for^="package"] {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	box-sizing: border-box;
+	border: 1px solid @theme-gray;
+	border-radius: 6px;
+}
+
+label[for^="package"]:after {
+	content: " ";
+	display: block;
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	border: 2px solid @theme-gray;
+	border-radius: 50%;
+}
+
+input[name="package"]:checked ~ label[for^="package"] {
+	border: 2px solid @theme-color;
+}
+
+input[name="package"]:checked ~ label[for^="package"]:after {
+	border-color: @theme-color;
+	background: @theme-color;
+}
+
+// MEDIA STYLES
+@media only screen and (max-width: 790px) {
+	.wrapper {
+		margin: 20px;
 	}
 }
