@@ -109,6 +109,16 @@ input[name="package"]:checked ~ label[for^="package"]:after {
 	border-left: transparent;
 	border-right: transparent;
 	color: #999;
+	&:before {
+		content: " ";
+		display: block;
+		width: 18px;
+		height: 18px;
+		position: absolute;
+		top: 9px;
+		left: 30%;
+		background: url(arrows/time.svg) center center no-repeat;
+	}
 }
 .details span:last-child {
 	color: @theme-color;
